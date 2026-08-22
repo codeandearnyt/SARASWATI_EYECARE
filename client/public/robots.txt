@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://saraswatiec-c3na4ugb.manus.space/sitemap.xml

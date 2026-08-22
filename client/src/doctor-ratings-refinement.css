@@ -1,0 +1,41 @@
+/* Doctor portraits remain calm and still on hover; the orbit has deliberate breathing room inside every card. */
+.teal-section .doctor-card{padding:30px 18px 20px!important}
+.teal-section .doctor-portrait-orbit{width:min(100%,230px)!important}
+.teal-section .doctor-portrait-orbit::after{inset:-13px!important;animation:doctor-portrait-orbit-reverse 6s linear infinite!important;border-color:rgba(255,232,171,.84)!important;box-shadow:0 0 16px rgba(222,186,255,.55)!important}
+.teal-section .doctor-portrait img{transition:none!important}
+@media (hover:hover) and (pointer:fine){.teal-section .doctor-card:hover{transform:none!important}.teal-section .doctor-card:hover .doctor-portrait img{transform:translateX(-50%) scale(1.38) translateY(15px)!important;filter:none!important}.teal-section .doctor-card:hover .doctor-portrait-orbit::after{animation:doctor-portrait-orbit-reverse 6s linear infinite!important;border-color:rgba(255,232,171,.84)!important;box-shadow:0 0 16px rgba(222,186,255,.55)!important}}
+
+/* The review content remains source-backed; only its hierarchy, contrast, and visual framing are elevated. */
+.reviews-section{position:relative;overflow:hidden;background:radial-gradient(circle at 8% 4%,rgba(202,164,255,.34),transparent 27%),radial-gradient(circle at 95% 26%,rgba(255,216,128,.14),transparent 25%),linear-gradient(138deg,#28113f 0%,#4b2870 48%,#251038 100%)!important}
+.reviews-section::before{content:"";position:absolute;z-index:0;width:510px;height:510px;border:1px solid rgba(255,236,188,.18);border-radius:50%;right:-175px;top:190px;box-shadow:0 0 0 44px rgba(255,255,255,.025),0 0 0 92px rgba(255,255,255,.02);pointer-events:none}
+.reviews-shell{position:relative;z-index:1}
+.reviews-overview{position:relative;isolation:isolate;overflow:hidden;padding:clamp(28px,4vw,52px)!important;border:1px solid rgba(255,255,255,.21);border-radius:32px;background:linear-gradient(121deg,rgba(255,255,255,.13),rgba(255,255,255,.055))!important;box-shadow:0 28px 70px rgba(14,3,29,.28),inset 0 1px 0 rgba(255,255,255,.21);backdrop-filter:blur(12px)}
+.reviews-overview::before{content:"";position:absolute;z-index:-1;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(243,202,115,.24),transparent 68%);right:19%;top:-135px;pointer-events:none}
+.reviews-kicker{color:#ffe3a6!important;font-weight:900;letter-spacing:.13em}
+.reviews-overview h2{color:#fff!important;text-shadow:0 5px 22px rgba(18,5,36,.28)}
+.reviews-overview h2 i{color:#f8d993!important}
+.reviews-overview>div:first-child>p{max-width:500px;color:#eee3f7!important}
+.review-action-row{gap:10px!important}
+.review-primary-cta,.review-secondary-cta{min-height:42px!important;border-radius:999px!important;font-weight:900!important;box-shadow:0 10px 22px rgba(19,5,38,.16)}
+.review-primary-cta{background:#f8d993!important;color:#4d2b69!important}
+.review-secondary-cta{border:1px solid rgba(255,255,255,.28)!important;background:rgba(255,255,255,.1)!important;color:#fff!important}
+.rating-orb{position:relative;overflow:hidden;padding:29px 26px 25px!important;border:1px solid rgba(255,245,218,.54)!important;border-radius:26px!important;background:linear-gradient(145deg,rgba(255,255,255,.2),rgba(255,255,255,.08))!important;box-shadow:0 20px 45px rgba(13,3,28,.24),inset 0 1px 0 rgba(255,255,255,.32)!important;backdrop-filter:blur(14px)}
+.rating-orb::before{content:"";position:absolute;inset:9px;border:1px solid rgba(255,255,255,.16);border-radius:20px;pointer-events:none}
+.rating-orb>*{position:relative;z-index:1}
+.rating-stars{display:inline-flex!important;gap:4px!important;margin-top:14px;padding:7px 10px;border-radius:999px;background:rgba(57,27,84,.32);color:#ffd980!important}
+.rating-big{margin-top:11px!important;color:#fff!important;font-size:clamp(54px,6vw,72px)!important;line-height:.88!important;letter-spacing:-.08em;text-shadow:0 9px 24px rgba(20,5,40,.25)}
+.rating-big span{font-size:18px!important;color:#f6d58f!important;letter-spacing:0}
+.rating-orb p{color:#eee2f7!important;font-size:12px!important}
+.rating-orb p strong{color:#fff!important}
+.rating-orb>a{display:inline-flex!important;align-items:center;justify-content:center;gap:6px;margin-top:14px;padding:10px 13px;border-radius:999px;background:#fff!important;color:#4e2b6d!important;font-size:11px!important;font-weight:900!important;box-shadow:0 10px 19px rgba(20,5,40,.17)}
+.trust-metrics{margin-top:18px!important;padding:10px!important;border:1px solid rgba(255,255,255,.18);border-radius:22px;background:rgba(255,255,255,.095)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.17)}
+.trust-metric{padding:15px 14px!important;border-radius:15px!important;transition:background .18s cubic-bezier(.23,1,.32,1)}
+.trust-metric:hover{background:rgba(255,255,255,.1)}
+.trust-metric span{color:#ffe29c!important;font-weight:900}
+.trust-metric p{color:#f2eaf9!important}
+.reviews-divider{background:rgba(255,255,255,.2)!important}
+.reviews-stage-head h3{color:#fff!important}.reviews-stage-head h3 i{color:#f7d990!important}.reviews-stage-head p{color:#e6daf2!important}
+.review-carousel-card{overflow:hidden;border:1px solid rgba(255,255,255,.18)!important;border-radius:28px!important;box-shadow:0 24px 55px rgba(13,3,28,.27)!important}
+.review-avatar-panel{background:linear-gradient(152deg,#f8d993,#d9a662)!important;color:#4a2865!important}.review-avatar{border-color:rgba(74,40,101,.16)!important;background:#fff!important;color:#4a2865!important}.review-avatar-panel span{color:#4a2865!important;font-weight:900}.review-copy-panel{background:rgba(255,255,255,.97)!important}.review-copy-panel blockquote{color:#3d2358!important}.review-author strong{color:#4d2b6b!important}.review-author span{color:#89699e!important}.review-controls>button{border-color:#d8c8e5!important;color:#4e2b6d!important}.review-dots button{background:#dfd0e9!important}.review-dots button[aria-current="true"]{background:#6e4598!important}
+@media(max-width:700px){.teal-section .doctor-card{padding:25px 14px 15px!important}.teal-section .doctor-portrait-orbit{width:min(100%,140px)!important}.teal-section .doctor-portrait-orbit::after{inset:-10px!important}.reviews-section::before{width:280px;height:280px;right:-150px;top:80px}.reviews-overview{padding:28px 20px!important;border-radius:24px}.reviews-overview::before{right:-105px;top:-150px}.review-action-row{display:grid!important;grid-template-columns:1fr 1fr}.review-action-row .review-secondary-cta:last-child{grid-column:1/-1}.review-primary-cta,.review-secondary-cta{justify-content:center!important;padding-inline:11px!important;font-size:11px!important}.rating-orb{margin-top:27px;padding:26px 20px 22px!important}.trust-metrics{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:7px!important}.trust-metric{padding:13px 10px!important}.review-carousel-card{border-radius:22px!important}}
+@media(prefers-reduced-motion:reduce){.teal-section .doctor-portrait-orbit::after{animation:none!important}.trust-metric{transition:none!important}}

@@ -1,0 +1,40 @@
+/* Focused final override: return the original interactive eye object without restoring the removed hero photograph. */
+.hero .clinical-orbit-wrap{
+  display:block!important;
+  z-index:1;
+  right:clamp(24px,6.5vw,90px);
+  top:53%;
+  width:min(31vw,410px);
+  height:min(31vw,410px);
+  opacity:.98;
+}
+.hero .clinical-orbit{display:block!important}
+.hero .hero-content{z-index:2}
+.hero .stats-float{z-index:3}
+
+/* Retain the clean white portrait treatment while cropping each clinician into an equal circular frame. */
+.teal-section .doctor-portrait{
+  width:min(100%,244px)!important;
+  height:auto!important;
+  aspect-ratio:1!important;
+  margin-inline:auto;
+  border-radius:50%!important;
+  overflow:hidden!important;
+  background:#fff!important;
+  border:1px solid rgba(255,255,255,.88)!important;
+  box-shadow:0 16px 30px rgba(28,10,54,.24)!important;
+}
+
+@media (max-width:980px){
+  .hero .clinical-orbit-wrap{right:20px;width:min(34vw,340px);height:min(34vw,340px);opacity:.9}
+  .teal-section .doctor-portrait{width:min(100%,220px)!important}
+}
+
+@media (max-width:700px){
+  .hero .clinical-orbit-wrap{display:none!important}
+  .teal-section .doctor-portrait{width:min(100%,190px)!important}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .hero .clinical-orbit-wrap{display:none!important}
+}

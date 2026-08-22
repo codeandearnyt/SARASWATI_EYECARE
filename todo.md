@@ -1,0 +1,140 @@
+# Upgrade checklist
+
+- [x] Review the live clinic website and collect approved services, business information, and visual references.
+- [x] Confirm the practical email delivery option as Formspree and document the required clinic endpoint for later activation.
+- [x] Design the real-time appointment validation, pending submission, success, and error states.
+- [x] Build the hash-routed admin area at `/#/admin` with appointment management views.
+- [x] Implement the appointment workflow and admin interface.
+- [x] Document the safe testing boundary: browser validation, responsive layouts, admin access, TypeScript checks, and unit tests are complete; no fabricated patient request was inserted into the live clinic database.
+- [x] Save a verified checkpoint and prepare the integration handoff.
+- [x] Apply a premium 3D-forward visual system, including depth, dimensional motion, and elevated interaction patterns.
+- [x] Verify a direct 21st.dev component integration or document the registry blocker; the requested registry URL currently returns non-registry HTML to the installer and a component-not-found response to static extraction.
+- [x] Stage the Formspree-ready delivery adapter and record that clinic email activation awaits a future endpoint; appointment records remain available in `/#/admin` in the meantime.
+- [x] Run final visual and interaction verification after restarting the full-stack project.
+- [x] Restore the stable premium website version that predates the later 3D-background and glass-scroll changes.
+- [x] Verify the restored public and admin experiences at desktop and mobile breakpoints, including type checks, tests, and a production build.
+- [x] Extract approved original clinic photographs and detailed service information from the live clinic website.
+- [x] Add source-based photography and expanded service descriptions to the public website.
+- [x] Add and run a safe appointment submission verification that does not persist a false patient request.
+- [x] Verify the enhanced public content and appointment flow across desktop and mobile.
+- [x] Audit every current route, visual pattern, metadata tag, render asset, and baseline Lighthouse category.
+- [x] Improve the visual design and interaction quality of all public and administrative pages.
+- [x] Implement page-level SEO, structured data, accessibility, and Core Web Vitals optimizations.
+- [x] Measure Lighthouse scores across public and admin routes, then address actionable findings.
+- [x] Resolve the remaining public Lighthouse colour-contrast findings with verified production CSS fixes.
+- [x] Investigate the large initial JavaScript and unused-JavaScript footprint, then remeasure the public and admin routes.
+- [x] Document which remaining Best Practices, back/forward-cache, and deprecated-API findings are platform-controlled versus app-controlled.
+- [x] Add the requested original clinic team-gathering image to the public experience.
+- [x] Give all doctor-portrait cards a clean white-background presentation.
+- [x] Refresh the patient-review section with verified original-site review content and presentation.
+- [x] Recreate the original website’s complete purple patient-reviews section with verified source content and controls.
+- [x] Apply a cohesive original-site-inspired purple theme across public and admin website surfaces.
+- [x] Remove the white doctor-portrait treatment and restore image presentation.
+- [x] Repair text contrast and visibility across purple-themed sections.
+- [x] Run a fresh production accessibility audit after the purple-theme contrast repair and resolve any remaining low-contrast text findings.
+- [x] Consolidate contrast-safe text treatments across hero, doctors, team feature, CTA, footer, and admin surfaces.
+- [x] Correct review-carousel ARIA semantics and slide-dot touch targets found in the post-repair accessibility audit.
+- [x] Run a fresh accessibility and contrast verification on the purple-themed admin route and resolve any remaining low-contrast text.
+- [x] Consolidate the final contrast-safe text rules into a documented shared stylesheet and verify all public and admin surfaces against it.
+- [x] Document the remaining admin contrast treatment ownership in the shared contrast stylesheet or the purple theme stylesheet.
+- [x] Re-run and record final public and admin accessibility verification after the shared-stylesheet consolidation.
+- [x] Add a direct stylesheet ownership comment for admin and dark public-surface contrast rules.
+- [x] Replace separate brand mark/text with the verified complete clinic logo asset.
+- [x] Remove the remaining dark or ring treatment from doctor portrait surfaces.
+- [x] Recheck and repair text visibility across the final purple visual system.
+- [x] Prepare and upload the four supplied clinician portraits for web delivery.
+- [x] Replace all public doctor-card portraits with the supplied clinician images.
+- [x] Zoom all supplied doctor portraits while preserving responsive card framing.
+- [x] Further increase all supplied doctor portrait sizes while preserving face-safe framing.
+- [x] Anchor all enlarged doctor portraits flush to the bottom of their cards.
+- [x] Lower the Ajay, Khushboo, and Rajesh portraits with controlled downward overflow.
+- [x] Replace the current brand asset with the newly supplied clinic logo.
+- [x] Strengthen the “Human attention” heading contrast in the specialist section.
+- [x] Replace the solid header with a premium transparent, scroll-responsive navigation treatment.
+- [x] Remove the current hero background photo and replace it with an abstract purple visual field.
+- [x] Redesign the header as a rounded capsule with premium 3D scroll behavior and pill-style Call us and Book appointment controls.
+- [x] Center the capsule header and normalize spacing across all header elements and buttons.
+- [x] Convert all doctor portraits to circular presentation with 50% radius.
+- [x] Restore the 3D eye visual on the right side of the abstract hero.
+- [x] Enlarge header navigation targets and enhance premium hover feedback.
+- [x] Stretch doctor portrait compositions inside circular frames and add accessible animated circular borders.
+- [x] Apply typography closely matching the original clinic site’s Google-reviewed hero treatment to the hero eye-hospital emphasis.
+- [x] Extend doctor portraits only toward the lower edge of their circular frames.
+- [x] Move the animated orbit outside the circular doctor portrait frames.
+- [x] Strengthen the visible pointer-driven 3D hover response of the hero eye.
+- [x] Make the animated rings around doctor portrait circles clearly visible at rest and on hover.
+- [x] Remove the static portrait outline and doctor-image hover treatment while retaining a single animated outer orbit.
+- [x] Audit the original clinic website’s pages, blog structure, and public interaction patterns.
+- [x] Add the real Google Maps icon treatment to the public ratings section.
+- [x] Build secured admin blog management with create, edit, delete, and public blog reading routes.
+- [x] Test blog data persistence, authorization boundaries, and responsive public/admin interfaces.
+- [x] Replace the separate public blog route with a dedicated homepage blog section.
+- [x] Keep blog publishing controls confined to the protected admin workspace after public route consolidation.
+- [x] Evaluate and implement the safest supported email-based administrator sign-in experience without exposing passwords in client code.
+- [x] Validate homepage blog presentation and protected admin sign-in behavior across desktop and mobile.
+- [x] Confirm successful browser-based administrator sign-in and access to protected management views.
+- [x] Verify the final in-page article dialog on mobile after publishing a clinic article.
+- [x] Document successful server-side credential-login and protected-workspace validation.
+- [x] Support opening the homepage article reader from a query parameter for responsive interaction verification.
+- [x] Audit the requested original clinic pages and record source-faithful content and interaction requirements.
+- [x] Build dedicated About, Services, Photo Gallery, Video, Equipment, Empanelments, Career, and Contact routes from audited clinic content.
+- [x] Add secured thumbnail-image URL fields to blog create, edit, and public presentation workflows.
+- [x] Resolve the header action/link collision and increase doctor portrait canvas height from the top.
+- [x] Embed the clinic location map in the footer and add a continuous animated WhatsApp action.
+- [x] Improve the protected admin panel’s information hierarchy, motion, and interaction feedback.
+- [x] Test all new public routes, blog media management, embedded map, WhatsApp action, and admin responsiveness.
+- [x] Complete missing audited sections and interactions on About, Video, Career, Gallery, Equipment, and Contact pages.
+- [x] Add the original-style contact enquiry form with clear appointment/contact conversion paths.
+- [x] Verify the refreshed protected admin workspace on both desktop and mobile after its motion and hierarchy refinement.
+- [x] Repeat final responsive and functional quality checks after completing the source-page coverage.
+- [x] Add the remaining audited About-page Vision, Mission, specialty, and recognition sections.
+- [x] Upgrade the Video route with a source-faithful interactive gallery for verified clinic video entries.
+- [x] Re-run desktop and mobile verification across all expanded public routes after the final content additions.
+- [x] Re-run type checks, tests, and production build after the final source-page coverage.
+- [x] Consolidate the homepage’s animated main header and footer into shared components.
+- [x] Apply the same shared header, footer, links, and animation behavior to every dedicated clinic route.
+- [x] Verify the unified site chrome on desktop and mobile routes, then re-run quality checks.
+- [x] Audit and use only real clinic-published video sources and matching thumbnails on the Video page.
+- [x] Replace placeholder video dialogs with real embedded clinic video playback.
+- [x] Set the Career facts grid to a stable three-column presentation.
+- [x] Replace the floating button glyph with the authentic WhatsApp icon and raise its fixed position slightly.
+- [x] Stabilize the mobile navigation positioning so it does not shift vertically during scroll or interaction.
+- [x] Validate real video playback and responsive public interaction behavior across desktop and mobile.
+- [x] Remove hover-based movement from the doctor portrait presentation.
+- [x] Add clear spacing between each doctor orbit treatment and its card boundary.
+- [x] Redesign the source-backed ratings section for stronger visual hierarchy and appeal.
+- [x] Verify the refined doctor and ratings sections across desktop and mobile breakpoints.
+- [x] Add a clear before-your-visit FAQ next to the primary appointment conversion path.
+- [x] Repair the clinical eye interaction so the complete visual area responds consistently to hover and pointer movement.
+- [x] Validate the appointment FAQ at desktop and mobile breakpoints, and validate the hover-only clinical eye interaction on desktop.
+- [x] Repair the clinical eye’s desktop mouse-hover and pointer-movement response across the full visual area.
+- [x] Add a touch-friendly tap interaction for the clinical eye on mobile devices.
+- [x] Validate desktop hover and mobile tap behavior for the clinical eye.
+- [x] Confirm appointment requests are retained only in the protected admin panel and remove any outgoing email delivery path.
+- [x] Add a human-verification gate to the appointment form before submission is accepted.
+- [x] Enforce verification server-side and validate protected admin receipt of verified appointment requests.
+- [x] Replace the external Turnstile approach with a mandatory lightweight in-site human-verification box.
+- [x] Validate that only human-verified appointment requests are recorded in the protected admin panel.
+- [x] Differentiate human-verification failures from storage or network submission errors in the appointment interface.
+- [x] Validate that a verified request is visible in the protected admin appointments view without creating a false clinic record.
+- [x] Add and run a safe UI-level test proving a verified request renders in the protected admin appointment table.
+- [x] Add search and status/service/date filtering controls to the protected appointment-management view.
+- [x] Move homepage and all public clinic pages to clean non-hash URLs while preserving `/#/admin` for administration.
+- [x] Update shared public navigation and internal links to the clean public URL structure.
+- [x] Validate public clean URLs, hash-only admin access, admin filters, and responsive behavior.
+- [x] Replace the remaining public hash links in clinic-page content with clean public paths.
+- [x] Validate search and status/service/date filters in a safe live admin scenario and review the responsive filter layout.
+- [x] Exercise search and status/service/date filters against a safely mocked appointment row in the live admin interface.
+- [x] Make all appointment-form input values clearly black and high contrast.
+- [x] Refine the appointment modal to be slightly more compact and wider across desktop while preserving responsive layout.
+- [x] Validate the refined appointment form on desktop and mobile.
+- [x] Add a protected CSV export for the currently filtered appointment inbox.
+- [x] Validate that exported appointment data follows active admin filters and remains unavailable to non-administrators.
+- [x] Prove non-administrators see the restricted appointment workspace and cannot access Export CSV.
+- [x] Reaudit public pages, clean routing, appointments, admin access, and responsive presentation after the latest published version.
+- [x] Re-run type checks, tests, and production build; report any material remaining limitations accurately.
+- [x] Repair the mobile Contact page’s card grid so all contact methods fit without horizontal clipping.
+- [x] Revalidate the repaired Contact page and completion audit at desktop and mobile breakpoints.
+- [x] Confirm the saved completion-audit report records the final intentional limitations accurately.
+- [x] Revalidate the repaired Contact page on desktop and record the result.
+- [x] Confirm the desktop Contact result is saved in the final completion-audit report.

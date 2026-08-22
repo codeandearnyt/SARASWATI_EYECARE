@@ -1,0 +1,106 @@
+/* Original-site-inspired Google Reviewed typography, adapted for the purple hero surface. */
+.hero h1 .reviewed-type{
+  font-family:"Segoe UI",Arial,Helvetica,sans-serif!important;
+  font-style:normal!important;
+  font-weight:800!important;
+  letter-spacing:-.055em;
+  background:linear-gradient(135deg,#c8a7ff 0%,#e5d3ff 50%,#c8a7ff 100%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+  color:transparent;
+  text-shadow:2px 2px 4px rgba(255,255,255,.12);
+}
+
+/* Larger, pill-shaped desktop links make the entire nav label an easy target to tap or click. */
+@media (min-width:701px){
+  .premium-scroll-header .header-inner{grid-template-columns:minmax(180px,1.05fr) minmax(0,1.85fr) auto!important;gap:10px!important}
+  .premium-scroll-header .desktop-nav{gap:0!important;justify-content:center!important}
+  .premium-scroll-header .desktop-nav a{
+    display:inline-flex!important;
+    align-items:center;
+    justify-content:center;
+    min-height:42px;
+    padding:0 8px!important;
+    border-radius:999px;
+    font-size:12px!important;
+    font-weight:750;
+    letter-spacing:.01em;
+    transition:transform .2s cubic-bezier(.23,1,.32,1),background .2s cubic-bezier(.23,1,.32,1),box-shadow .2s cubic-bezier(.23,1,.32,1),color .2s cubic-bezier(.23,1,.32,1)!important;
+  }
+  .premium-scroll-header:not(.header-scrolled) .desktop-nav a{color:rgba(255,255,255,.93)!important}
+  .premium-scroll-header.header-scrolled .desktop-nav a{color:#4b276c!important}
+  .premium-scroll-header .header-actions{gap:8px!important;flex-wrap:nowrap!important}
+  .premium-scroll-header .capsule-action{white-space:nowrap!important;padding-inline:13px!important}
+}
+
+/* Keep the white circles pristine: portraits extend only downward, while the orbit stays outside their edge. */
+.teal-section .doctor-portrait-orbit{
+  position:relative;
+  width:min(100%,270px);
+  aspect-ratio:1;
+  margin-inline:auto;
+}
+.teal-section .doctor-portrait-orbit::before{
+  content:none;
+}
+.teal-section .doctor-portrait-orbit::after{
+  content:"";
+  position:absolute;
+  z-index:0;
+  inset:-17px;
+  border:2px dashed rgba(255,232,171,.84);
+  border-radius:50%;
+  box-shadow:0 0 16px rgba(222,186,255,.55);
+  animation:doctor-portrait-orbit-reverse 6s linear infinite;
+  pointer-events:none;
+}
+.teal-section .doctor-portrait-orbit .doctor-portrait{
+  position:relative;
+  z-index:1;
+  width:100%!important;
+  height:100%!important;
+  margin:0!important;
+  border:none!important;
+}
+.teal-section .doctor-portrait img{
+  transform:translateX(-50%) scale(1.38) translateY(15px)!important;
+  transform-origin:center bottom!important;
+  transition:transform .42s cubic-bezier(.23,1,.32,1),filter .42s cubic-bezier(.23,1,.32,1)!important;
+}
+.teal-section .doctor-portrait::before{content:none!important}
+.teal-section .doctor-portrait span{z-index:2!important}
+
+@media (hover:hover) and (pointer:fine){
+  .premium-scroll-header .desktop-nav a:hover{
+    transform:translateY(-2px) scale(1.025);
+    background:rgba(255,255,255,.16)!important;
+    box-shadow:0 9px 18px rgba(28,10,54,.2),inset 0 1px 0 rgba(255,255,255,.24);
+  }
+  .premium-scroll-header.header-scrolled .desktop-nav a:hover{
+    background:rgba(109,69,150,.12)!important;
+    box-shadow:0 8px 16px rgba(60,31,96,.13),inset 0 1px 0 rgba(255,255,255,.72);
+  }
+  .premium-scroll-header .capsule-action:hover{transform:translateY(-3px) scale(1.025)!important}
+  .doctor-card:hover{transform:none!important}
+  .doctor-card:hover .doctor-portrait img{transform:translateX(-50%) scale(1.38) translateY(15px)!important;filter:none!important}
+  .doctor-card:hover .doctor-portrait-orbit::after{animation-duration:2.6s;border-color:#fff4c9;box-shadow:0 0 22px rgba(255,226,156,.86),0 0 35px rgba(218,178,255,.7)}
+  .hero .clinical-orbit-wrap:hover .clinical-orbit{filter:drop-shadow(0 24px 28px rgba(7,1,21,.36)) drop-shadow(0 0 24px rgba(161,255,244,.56))}
+  .hero .clinical-orbit-wrap:hover .orbit-lens{transform:translateZ(70px) scale(1.08);box-shadow:0 0 88px rgba(111,238,218,.82),inset 0 0 31px rgba(255,255,255,.46)}
+  .hero .clinical-orbit-wrap:hover .orbit-ring{border-color:rgba(235,255,249,.68);box-shadow:0 0 53px rgba(126,239,222,.42)}
+  .hero .clinical-orbit-wrap:hover .orbital-node{box-shadow:0 0 26px currentColor}
+}
+
+@keyframes doctor-portrait-orbit-reverse{to{transform:rotate(-1turn)}}
+
+@media (prefers-reduced-motion:reduce){
+  .teal-section .doctor-portrait-orbit::after{animation:none}
+  .teal-section .doctor-portrait img,.premium-scroll-header .desktop-nav a{transition:none!important}
+}
+
+@media (max-width:700px){
+  .hero h1 .reviewed-type{letter-spacing:-.045em}
+  .teal-section .doctor-portrait-orbit{width:min(100%,214px)}
+  .teal-section .doctor-portrait img{transform:translateX(-50%) scale(1.3) translateY(10px)!important}
+}
+@media (max-width:1120px) and (min-width:701px){.premium-scroll-header .desktop-nav{display:none!important}.premium-scroll-header .menu-btn{display:inline-grid!important}}
