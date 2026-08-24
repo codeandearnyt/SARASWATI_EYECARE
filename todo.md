@@ -138,3 +138,27 @@
 - [x] Confirm the saved completion-audit report records the final intentional limitations accurately.
 - [x] Revalidate the repaired Contact page on desktop and record the result.
 - [x] Confirm the desktop Contact result is saved in the final completion-audit report.
+- [x] Remove the three-button mobile bottom navigation while preserving access to essential public actions.
+- [x] Validate the mobile layout after bottom navigation removal.
+- [x] Deliver a complete Flutter-generation prompt for the full admin panel, backend API contract, and patient appointment app without generating source code.
+- [x] Verify the saved Flutter generation prompt covers the complete admin UI, patient app, and backend API contract.
+- [x] Deliver the confirmed Flutter generation prompt to the user.
+- [x] Deliver the full confirmed Flutter generation prompt as the user-facing prompt attachment.
+- [x] Repair the appointment human-check control so completion visibly enables submission.
+- [x] Confirm the appointment Submit button remains disabled until verification is valid and server enforcement remains active.
+- [x] Correct the appointment age field so valid numeric input advances reliably to the verification step.
+- [x] Add a concise privacy and consent note beside the verified appointment submission control.
+- [x] Add visible submitting and success feedback after a verified appointment request is sent.
+- [x] Add an admin-only inbox badge for newly verified appointment requests.
+- [x] Validate the revised appointment and protected admin notification flows.
+- [x] Audit and repair asset URLs that fail on an external Vercel deployment.
+- [x] Add deployment-safe public security metadata and confirm server/client security boundaries.
+- [x] Verify repaired assets and security metadata with quality checks.
+- [ ] Verify images, media, favicon, and preload assets on the live Vercel domain after redeployment.
+- [ ] Verify the live Vercel security response headers and `/.well-known/security.txt` endpoint.
+- [x] Repair the footer map overflow across mobile and tablet breakpoints.
+- [x] Add client-side resilient fallbacks for externally deployed clinic images and media assets.
+- [x] Revalidate footer responsiveness, Vercel asset configuration, and public security metadata.
+- [ ] Commit and push the verified footer, asset fallback, security, and deployment configuration changes to GitHub.
+- [ ] Deploy the updated project to Vercel with the user-provided credential.
+- [ ] Verify live Vercel assets, security headers, and public security.txt after deployment.

@@ -49,6 +49,7 @@ describe("protected appointment administration UI", () => {
     expect(markup).toContain("All statuses");
     expect(markup).toContain("All services");
     expect(markup).toContain("Export CSV");
+    expect(markup).toContain("1 new verified request in inbox");
     expect(markup).not.toContain("Email delivery requires");
   });
 
@@ -59,6 +60,7 @@ describe("protected appointment administration UI", () => {
       expect(markup).toContain("Management access is restricted");
       expect(markup).not.toContain("Export CSV");
       expect(markup).not.toContain("Verified browser request");
+      expect(markup).not.toContain("new verified request");
     } finally {
       accessState.role = "admin";
     }

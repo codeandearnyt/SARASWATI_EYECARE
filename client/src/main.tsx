@@ -1,5 +1,6 @@
 import { createRoot } from "react-dom/client";
 import App from "./App";
+import { installManagedAssetFallback } from "./lib/managedAssets";
 import "./index.css";
 import "./final-accessibility.css";
 import "./team-review-refresh.css";
@@ -29,6 +30,8 @@ import "./appointment-human-verification.css";
 import "./admin-appointment-filters.css";
 import "./appointment-modal-readability.css";
 import "./mobile-contact-repair.css";
+
+installManagedAssetFallback();
 
 createRoot(document.getElementById("root")!).render(
   <App />
