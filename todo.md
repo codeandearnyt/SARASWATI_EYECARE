@@ -154,11 +154,11 @@
 - [x] Audit and repair asset URLs that fail on an external Vercel deployment.
 - [x] Add deployment-safe public security metadata and confirm server/client security boundaries.
 - [x] Verify repaired assets and security metadata with quality checks.
-- [ ] Verify images, media, favicon, and preload assets on the live Vercel domain after redeployment.
-- [ ] Verify the live Vercel security response headers and `/.well-known/security.txt` endpoint.
+- [x] Verify images, media, favicon, and preload assets on the live Vercel domain after redeployment.
+- [x] Verify the live Vercel security response headers and `/.well-known/security.txt` endpoint.
 - [x] Repair the footer map overflow across mobile and tablet breakpoints.
 - [x] Add client-side resilient fallbacks for externally deployed clinic images and media assets.
 - [x] Revalidate footer responsiveness, Vercel asset configuration, and public security metadata.
-- [ ] Commit and push the verified footer, asset fallback, security, and deployment configuration changes to GitHub.
-- [ ] Deploy the updated project to Vercel with the user-provided credential.
-- [ ] Verify live Vercel assets, security headers, and public security.txt after deployment.
+- [x] Commit and push the verified footer, asset fallback, security, and deployment configuration changes to GitHub.
+- [x] Deploy the updated project to Vercel with the user-provided credential.
+- [x] Verify live Vercel assets, security headers, and public security.txt after deployment.
