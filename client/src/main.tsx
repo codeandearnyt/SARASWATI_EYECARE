@@ -18,18 +18,8 @@ import "./capsule-hero-header.css";
 import "./centered-capsule-header.css";
 import "./hero-orbit-return.css";
 import "./interaction-typography-refinement.css";
-import "./blog-system.css";
-import "./home-blog-dialog.css";
-import "./expanded-clinic-pages.css";
-import "./admin-motion.css";
 import "./shared-site-chrome.css";
-import "./real-video-mobile-fixes.css";
 import "./doctor-ratings-refinement.css";
-import "./appointment-eye-refinement.css";
-import "./appointment-human-verification.css";
-import "./admin-appointment-filters.css";
-import "./appointment-modal-readability.css";
-import "./mobile-contact-repair.css";
 
 function installAnalytics() {
   const endpoint = import.meta.env.VITE_ANALYTICS_ENDPOINT;

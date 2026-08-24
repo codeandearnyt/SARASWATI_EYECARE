@@ -1,0 +1,5 @@
+# Lighthouse Optimization Validation
+
+The live Vercel mobile Lighthouse baseline on 2026-08-24 for `https://saraswati-eyecare.vercel.app/` measured **66 Performance, 96 Accessibility, 77 Best Practices, and 100 SEO**. Its major contributors were a 109 KB HTML document caused by the managed production runtime, a failed unresolved analytics URL (`%VITE_ANALYTICS_ENDPOINT%/umami`) returning a browser console error, an unnecessary 109 KB blog tRPC request receiving the SPA fallback, duplicate motion-library delivery, and an inaccessible compact call control.
+
+After the first Vercel deployment of the optimization commit, the live audit measured **84 Performance, 100 Accessibility, 100 Best Practices, and 100 SEO**. The HTML transfer fell to roughly 2 KB and the initial JavaScript transfer fell from about 205 KB to about 156 KB. The remaining main issues were roughly 75 KB of unused initial JavaScript, a 44 KB render-blocking stylesheet, Google font transfers, and main-thread style/layout work. The report still identified the full-page embedded map frame as a non-actionable bfcache constraint.

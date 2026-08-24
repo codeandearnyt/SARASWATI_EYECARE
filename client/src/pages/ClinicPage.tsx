@@ -2,6 +2,9 @@ import { ArrowLeft, ArrowUpRight, Check, Clock3, Eye, Mail, MapPin, MessageCircl
 import { useState } from "react";
 import { useLocation } from "wouter";
 import { SiteFooter, SiteHeader } from "@/components/SiteChrome";
+import "../expanded-clinic-pages.css";
+import "../real-video-mobile-fixes.css";
+import "../mobile-contact-repair.css";
 
 type EquipmentEntry = [category: string, title: string, manufacturer: string, points: string[]];
 type PartnerEntry = [category: string, title: string, points: string[]];

@@ -2,6 +2,8 @@ import { useAuth } from "@/_core/hooks/useAuth";
 import { TrpcProvider } from "@/components/TrpcProvider";
 import AdminPage from "./AdminPage";
 import AdminCredentialLogin from "./AdminCredentialLogin";
+import "../admin-motion.css";
+import "../admin-appointment-filters.css";
 
 export default function AdminApp() {
   return <TrpcProvider><AdminAppContent /></TrpcProvider>;

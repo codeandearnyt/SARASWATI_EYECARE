@@ -1,6 +1,5 @@
 /* Quiet Clinical Editorial: asymmetric editorial layout, teal care-line motifs, restrained motion, and thumb-first actions. */
 import { lazy, Suspense, useEffect, useRef, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight, CalendarDays, Check, ChevronDown, Clock3, Eye, MapPin, MessageCircle, Phone, Play, ShieldCheck, Sparkles, Star, Stethoscope, Users, X } from "lucide-react";
 import { toast } from "sonner";
 import ClinicalOrbit from "@/components/ClinicalOrbit";
@@ -8,7 +7,17 @@ import { SiteFooter, SiteHeader } from "@/components/SiteChrome";
 
 const AppointmentWizard = lazy(() => import("@/components/AppointmentFlow"));
 const HomeBlogFeature = lazy(() => import("@/components/HomeBlogFeature"));
-const heroImg = "/manus-storage/clinic-frontimage-optimized_cf221c26.webp";
+
+function MotionDiv({ initial: _initial, animate: _animate, exit: _exit, transition: _transition, whileInView: _whileInView, viewport: _viewport, ...props }: React.HTMLAttributes<HTMLDivElement> & { initial?: unknown; animate?: unknown; exit?: unknown; transition?: unknown; whileInView?: unknown; viewport?: unknown }) {
+  return <div {...props} />;
+}
+
+const motion = { div: MotionDiv };
+
+function AnimatePresence({ children }: { children: React.ReactNode; mode?: string }) {
+  return <>{children}</>;
+}
+const heroImg = "/manus-storage/clinic-frontimage-mobile_241c8ce9.webp";
 const exteriorImg = "/manus-storage/clinic-reception-optimized_f21c590d.webp";
 const equipmentImg = "/manus-storage/clinic-machine-optimized_76e06cce.webp";
 const refractionRoomImg = "/manus-storage/clinic-refraction-room-optimized_ca9c5c9b.webp";

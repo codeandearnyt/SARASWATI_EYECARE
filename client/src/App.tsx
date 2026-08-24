@@ -1,10 +1,7 @@
-import { Toaster } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
 import { Route, Router, Switch } from "wouter";
 import { useHashLocation } from "wouter/use-hash-location";
 import { lazy, Suspense, useEffect, useState } from "react";
 import ErrorBoundary from "./components/ErrorBoundary";
-import { ThemeProvider } from "./contexts/ThemeContext";
 import { isAdminHashRoute, legacyPublicHashPath } from "./lib/publicRoutes";
 import Home from "./pages/Home";
 
@@ -38,5 +35,5 @@ function Routes() {
 }
 
 export default function App() {
-  return <ErrorBoundary><ThemeProvider defaultTheme="light"><TooltipProvider><Toaster /><Suspense fallback={<div className="route-loading" role="status">Loading page…</div>}><Routes /></Suspense></TooltipProvider></ThemeProvider></ErrorBoundary>;
+  return <ErrorBoundary><Suspense fallback={<div className="route-loading" role="status">Loading page…</div>}><Routes /></Suspense></ErrorBoundary>;
 }
