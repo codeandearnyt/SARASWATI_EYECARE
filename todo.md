@@ -167,7 +167,7 @@
 - [x] Re-run Lighthouse and quality gates, recording actual category scores and remaining third-party constraints.
 - [x] Push the optimization update to GitHub and deploy the audited build to Vercel.
 - [x] Verify the live optimized Vercel deployment and Lighthouse results.
-- [ ] Diagnose the reported protected admin authentication-screen failure on the Vercel deployment.
-- [ ] Repair the admin route or credential-login screen without weakening server-side access controls.
-- [ ] Validate the secure admin entry flow and redeploy the verified fix to GitHub and Vercel.
-- [ ] Complete the visual admin credential-login screen with clear secure-state, validation, and recovery feedback.
+- [x] Diagnose the reported protected admin authentication-screen failure on the Vercel deployment.
+- [x] Repair the admin route or credential-login screen without weakening server-side access controls.
+- [x] Validate the secure admin entry flow and redeploy the verified fix to GitHub and Vercel.
+- [x] Complete the visual admin credential-login screen with clear secure-state, validation, and recovery feedback.
