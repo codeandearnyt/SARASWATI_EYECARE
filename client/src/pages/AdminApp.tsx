@@ -2,6 +2,7 @@ import { useAuth } from "@/_core/hooks/useAuth";
 import { TrpcProvider } from "@/components/TrpcProvider";
 import AdminPage from "./AdminPage";
 import AdminCredentialLogin from "./AdminCredentialLogin";
+import "../blog-system.css";
 import "../admin-motion.css";
 import "../admin-appointment-filters.css";
 

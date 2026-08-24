@@ -36,4 +36,9 @@ describe("external static deployment safeguards", () => {
     expect(html).not.toContain("%VITE_ANALYTICS_ENDPOINT%");
     expect(html).not.toContain("%VITE_ANALYTICS_WEBSITE_ID%");
   });
+
+  it("loads the complete protected admin credential UI stylesheet with the lazy admin route", () => {
+    const adminRoute = readFileSync(resolve(projectRoot, "client/src/pages/AdminApp.tsx"), "utf8");
+    expect(adminRoute).toContain('import "../blog-system.css"');
+  });
 });
