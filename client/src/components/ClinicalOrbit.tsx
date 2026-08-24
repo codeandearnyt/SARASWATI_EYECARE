@@ -1,4 +1,4 @@
-import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { useState } from "react";
 
 export default function ClinicalOrbit() {
@@ -28,7 +28,7 @@ export default function ClinicalOrbit() {
     });
   };
 
-  return <button type="button" className={`clinical-orbit-hitbox${touchFocused ? " is-touch-active" : ""}`} aria-label="Explore the clinical eye model" aria-pressed={touchFocused} onPointerEnter={trackPointer} onPointerMove={trackPointer} onPointerLeave={event => { if (event.pointerType !== "touch") resetPointer(); }} onPointerDown={event => { if (event.pointerType !== "mouse") toggleTouchFocus(); }} onClick={event => { if (event.detail === 0) toggleTouchFocus(); }}>
+  return <button type="button" className={`clinical-orbit-hitbox${touchFocused ? " is-touch-active" : ""}`} aria-label="Tap to explore the clinical eye model" aria-pressed={touchFocused} onPointerEnter={trackPointer} onPointerMove={trackPointer} onPointerLeave={event => { if (event.pointerType !== "touch") resetPointer(); }} onPointerDown={event => { if (event.pointerType !== "mouse") toggleTouchFocus(); }} onClick={event => { if (event.detail === 0) toggleTouchFocus(); }}>
     <div className="clinical-orbit-wrap">
       <motion.div className="clinical-orbit" style={{ rotateX, rotateY, scale, y }}>
         <span className="orbit-ring ring-a" /><span className="orbit-ring ring-b" /><span className="orbit-ring ring-c" />

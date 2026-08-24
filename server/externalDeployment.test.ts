@@ -5,14 +5,18 @@ import { describe, expect, it } from "vitest";
 const projectRoot = resolve(import.meta.dirname, "..");
 
 describe("external static deployment safeguards", () => {
-  it("keeps project-managed media available through a Vercel rewrite before the SPA fallback", () => {
+  it("forwards protected APIs and project-managed media through Vercel before the SPA fallback", () => {
     const config = JSON.parse(readFileSync(resolve(projectRoot, "vercel.json"), "utf8"));
     expect(config.outputDirectory).toBe("dist/public");
     expect(config.rewrites[0]).toEqual({
+      source: "/api/:path*",
+      destination: "https://saraswatiec-c3na4ugb.manus.space/api/:path*",
+    });
+    expect(config.rewrites[1]).toEqual({
       source: "/manus-storage/:path*",
       destination: "https://saraswatiec-c3na4ugb.manus.space/manus-storage/:path*",
     });
-    expect(config.rewrites[1]).toEqual({ source: "/(.*)", destination: "/index.html" });
+    expect(config.rewrites[2]).toEqual({ source: "/(.*)", destination: "/index.html" });
   });
 
   it("ships public security reporting metadata and baseline browser protections", () => {
@@ -25,5 +29,11 @@ describe("external static deployment safeguards", () => {
       expect.objectContaining({ key: "X-Content-Type-Options", value: "nosniff" }),
       expect.objectContaining({ key: "Permissions-Policy" }),
     ]));
+  });
+
+  it("does not ship unresolved analytics placeholders in the public document", () => {
+    const html = readFileSync(resolve(projectRoot, "client/index.html"), "utf8");
+    expect(html).not.toContain("%VITE_ANALYTICS_ENDPOINT%");
+    expect(html).not.toContain("%VITE_ANALYTICS_WEBSITE_ID%");
   });
 });

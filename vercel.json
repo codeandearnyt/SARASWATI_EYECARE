@@ -4,13 +4,14 @@
   "outputDirectory": "dist/public",
   "rewrites": [
     {
+      "source": "/api/:path*",
+      "destination": "https://saraswatiec-c3na4ugb.manus.space/api/:path*"
+    },
+    {
       "source": "/manus-storage/:path*",
       "destination": "https://saraswatiec-c3na4ugb.manus.space/manus-storage/:path*"
     },
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
+    { "source": "/(.*)", "destination": "/index.html" }
   ],
   "headers": [
     {

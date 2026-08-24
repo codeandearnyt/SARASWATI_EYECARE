@@ -1,6 +1,5 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { TrpcProvider } from "@/components/TrpcProvider";
 import { Route, Router, Switch } from "wouter";
 import { useHashLocation } from "wouter/use-hash-location";
 import { lazy, Suspense, useEffect, useState } from "react";
@@ -39,5 +38,5 @@ function Routes() {
 }
 
 export default function App() {
-  return <ErrorBoundary><ThemeProvider defaultTheme="light"><TooltipProvider><TrpcProvider><Toaster /><Suspense fallback={<div className="route-loading" role="status">Loading page…</div>}><Routes /></Suspense></TrpcProvider></TooltipProvider></ThemeProvider></ErrorBoundary>;
+  return <ErrorBoundary><ThemeProvider defaultTheme="light"><TooltipProvider><Toaster /><Suspense fallback={<div className="route-loading" role="status">Loading page…</div>}><Routes /></Suspense></TooltipProvider></ThemeProvider></ErrorBoundary>;
 }

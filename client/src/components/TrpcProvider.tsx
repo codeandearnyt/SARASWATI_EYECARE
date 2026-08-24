@@ -16,14 +16,14 @@ function redirectToLoginIfUnauthorized(error: unknown) {
 queryClient.getQueryCache().subscribe(event => {
   if (event.type === "updated" && event.action.type === "error") {
     redirectToLoginIfUnauthorized(event.query.state.error);
-    console.error("[API Query Error]", event.query.state.error);
+    if (import.meta.env.DEV) console.error("[API Query Error]", event.query.state.error);
   }
 });
 
 queryClient.getMutationCache().subscribe(event => {
   if (event.type === "updated" && event.action.type === "error") {
     redirectToLoginIfUnauthorized(event.mutation.state.error);
-    console.error("[API Mutation Error]", event.mutation.state.error);
+    if (import.meta.env.DEV) console.error("[API Mutation Error]", event.mutation.state.error);
   }
 });
 

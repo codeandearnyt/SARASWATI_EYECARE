@@ -31,7 +31,19 @@ import "./admin-appointment-filters.css";
 import "./appointment-modal-readability.css";
 import "./mobile-contact-repair.css";
 
+function installAnalytics() {
+  const endpoint = import.meta.env.VITE_ANALYTICS_ENDPOINT;
+  const websiteId = import.meta.env.VITE_ANALYTICS_WEBSITE_ID;
+  if (!endpoint || !websiteId || endpoint.includes("%") || websiteId.includes("%")) return;
+  const analytics = document.createElement("script");
+  analytics.defer = true;
+  analytics.src = `${endpoint.replace(/\/$/, "")}/umami`;
+  analytics.dataset.websiteId = websiteId;
+  document.head.appendChild(analytics);
+}
+
 installManagedAssetFallback();
+installAnalytics();
 
 createRoot(document.getElementById("root")!).render(
   <App />

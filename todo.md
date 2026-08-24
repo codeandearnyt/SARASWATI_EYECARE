@@ -162,3 +162,8 @@
 - [x] Commit and push the verified footer, asset fallback, security, and deployment configuration changes to GitHub.
 - [x] Deploy the updated project to Vercel with the user-provided credential.
 - [x] Verify live Vercel assets, security headers, and public security.txt after deployment.
+- [ ] Capture a fresh Lighthouse baseline for the live Vercel homepage.
+- [ ] Implement measurable high-impact performance and audit improvements without reducing accessibility or core functionality.
+- [ ] Re-run Lighthouse and quality gates, recording actual category scores and remaining third-party constraints.
+- [ ] Push the optimization update to GitHub and deploy the audited build to Vercel.
+- [ ] Verify the live optimized Vercel deployment and Lighthouse results.

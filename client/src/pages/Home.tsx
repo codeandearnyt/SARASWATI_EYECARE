@@ -1,13 +1,13 @@
 /* Quiet Clinical Editorial: asymmetric editorial layout, teal care-line motifs, restrained motion, and thumb-first actions. */
-import { lazy, Suspense, useState } from "react";
+import { lazy, Suspense, useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight, CalendarDays, Check, ChevronDown, Clock3, Eye, MapPin, MessageCircle, Phone, Play, ShieldCheck, Sparkles, Star, Stethoscope, Users, X } from "lucide-react";
 import { toast } from "sonner";
 import ClinicalOrbit from "@/components/ClinicalOrbit";
-import HomeBlogSection from "@/components/HomeBlogSection";
 import { SiteFooter, SiteHeader } from "@/components/SiteChrome";
 
 const AppointmentWizard = lazy(() => import("@/components/AppointmentFlow"));
+const HomeBlogFeature = lazy(() => import("@/components/HomeBlogFeature"));
 const heroImg = "/manus-storage/clinic-frontimage-optimized_cf221c26.webp";
 const exteriorImg = "/manus-storage/clinic-reception-optimized_f21c590d.webp";
 const equipmentImg = "/manus-storage/clinic-machine-optimized_76e06cce.webp";
@@ -68,7 +68,21 @@ export default function Home() {
   const [appointmentOpen, setAppointmentOpen] = useState(false);
   const [testimonial, setTestimonial] = useState(0);
   const [faq, setFaq] = useState<number | null>(0);
+  const blogTrigger = useRef<HTMLDivElement>(null);
+  const [showBlog, setShowBlog] = useState(false);
   const openAppointment = () => setAppointmentOpen(true);
+
+  useEffect(() => {
+    const target = blogTrigger.current;
+    if (!target) return;
+    const observer = new IntersectionObserver(([entry]) => {
+      if (!entry.isIntersecting) return;
+      setShowBlog(true);
+      observer.disconnect();
+    }, { rootMargin: "480px 0px" });
+    observer.observe(target);
+    return () => observer.disconnect();
+  }, []);
 
   return <div className="site-shell">
     <SiteHeader onBookAppointment={openAppointment} />
@@ -92,7 +106,7 @@ export default function Home() {
 
       <section className="reviews-section jsx-935c9150ba3f1607" id="stories"><div className="container reviews-shell"><div className="reviews-overview"><div><div className="reviews-kicker"><span className="care-line" />Patient reviews</div><h2>Trusted by<br /><i>Thousands.</i></h2><p>See what our patients say about their experience at Saraswati Eye Care Centre.</p><div className="review-action-row"><a className="review-primary-cta" href="https://g.page/r/CcGjKywuRqrPEAE/review" target="_blank" rel="noreferrer"><Star size={15} fill="currentColor" /> Write a review</a><button className="review-secondary-cta" onClick={openAppointment}>Book appointment <CalendarDays size={15} /></button><a className="review-secondary-cta" href="#about">Learn more about us <ArrowUpRight size={15} /></a></div></div><div className="rating-orb"><img className="google-maps-rating-icon" src="/manus-storage/google-maps-icon_3ada9d2d.png" alt="Google Maps" width="36" height="36" /><div className="rating-stars" role="img" aria-label="Five star rating"><Star size={16} fill="currentColor" /><Star size={16} fill="currentColor" /><Star size={16} fill="currentColor" /><Star size={16} fill="currentColor" /><Star size={16} fill="currentColor" /></div><div className="rating-big">4.9<span>/5</span></div><p>Based on <strong>1000+</strong> reviews</p><a href="https://www.google.com/maps/place/Saraswati+Eye+Care+Centre/@29.3139692,76.3253288,17z/data=!4m8!3m7!1s0x391204530f997803:0xcfaa462e2c2ba3c1!8m2!3d29.3139692!4d76.3253288!9m1!1b1!16s%2Fg%2F11d_cxyqmx?entry=ttu" target="_blank" rel="noreferrer"><img className="google-maps-link-icon" src="/manus-storage/google-maps-icon_3ada9d2d.png" alt="" width="18" height="18" />Read more reviews <ArrowUpRight size={15} /></a></div></div><div className="trust-metrics"><div className="trust-metric"><span><Users size={17} />50,000+</span><p>Successful Treatments</p></div><div className="trust-metric"><span><Clock3 size={17} />15+</span><p>Years Experience</p></div><div className="trust-metric"><span><Stethoscope size={17} />4</span><p>Expert Specialists</p></div><div className="trust-metric"><span><ShieldCheck size={17} />NABH</span><p>Certified Hospital</p></div></div><div className="reviews-divider" /><div className="reviews-stage-head"><h3>What Our<br /><i>Patients Say.</i></h3><p>With over 15+ years of excellence in eye care and more than 5000 surgeries performed annually, Saraswati Eye Hospital stands as a trusted name in advanced ophthalmic treatments. Our experienced specialists ensure expert care and consistently high-quality outcomes.</p></div><div className="review-carousel-card"><div className="review-avatar-panel"><div className="review-avatar">{testimonials[testimonial][0].split(" ").map(part => part[0]).join("").slice(0, 2)}</div><span>Google review</span></div><div className="review-copy-panel"><div className="quote-mark">“</div><AnimatePresence mode="wait"><motion.div key={testimonial} initial={{ opacity: 0, x: 18 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -18 }} transition={{ duration: .28 }}><blockquote>“{testimonials[testimonial][2]}”</blockquote><div className="review-author"><strong>{testimonials[testimonial][0]}</strong><span>{testimonials[testimonial][1]}</span></div></motion.div></AnimatePresence><div className="review-controls"><button onClick={() => setTestimonial((testimonial + testimonials.length - 1) % testimonials.length)} aria-label="Previous review">←</button><div className="review-dots">{testimonials.map((entry, index) => <button key={entry[0]} onClick={() => setTestimonial(index)} aria-label={`Go to review ${index + 1}`} aria-current={index === testimonial ? "true" : undefined} />)}</div><button onClick={() => setTestimonial((testimonial + 1) % testimonials.length)} aria-label="Next review">→</button></div></div></div></div></section>
 
-      <HomeBlogSection onBookAppointment={openAppointment} />
+      <div ref={blogTrigger}>{showBlog && <Suspense fallback={<section className="home-blog-section section" aria-label="Clinic insights" />}><HomeBlogFeature onBookAppointment={openAppointment} /></Suspense>}</div>
 
       <section className="section visit-faq-section" aria-labelledby="visit-faq-title"><div className="container visit-faq-layout"><div className="visit-faq-intro"><div className="eyebrow"><span className="care-line" />Before your visit</div><h2 id="visit-faq-title">A calmer start to<br /><i>your appointment.</i></h2><p>A few practical details can make your visit more straightforward. If anything is unclear, the clinic team can help before you travel.</p><div className="visit-faq-actions"><Button onClick={openAppointment}>Book an appointment <ArrowUpRight size={17} /></Button><a href="tel:+919729236700" className="text-link"><Phone size={17} /> Call the care team</a></div><div className="visit-faq-note"><ShieldCheck size={17} /><span>Bring previous reports when available; the care team will guide the rest.</span></div></div><div className="visit-faq-list">{visitFaqs.map(([question, answer], index) => <article className={faq === index ? "open" : ""} key={question}><button type="button" onClick={() => setFaq(faq === index ? null : index)} aria-expanded={faq === index}><span>{String(index + 1).padStart(2, "0")}</span><strong>{question}</strong><ChevronDown size={19} /></button><div className="visit-faq-answer"><p>{answer}</p></div></article>)}</div></div></section>
 
